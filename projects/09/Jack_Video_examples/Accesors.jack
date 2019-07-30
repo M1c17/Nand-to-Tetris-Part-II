@@ -1,0 +1,6 @@
+class Foo {
+  var Fraction x;
+  let x = Fraction.new(5,17);
+  do Output.printInt(x.numerator);       // not allowed
+  do Output.printInt(x.getNumerator);    // ok
+}

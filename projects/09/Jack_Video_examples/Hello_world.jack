@@ -1,0 +1,10 @@
+// Example 1 Unit 3.1
+/** Hello world program */
+Class Main {
+  function void main (){
+  /* Prints some text using the standard library */
+  do Output.printString('Hello world!');
+  do Output.print();
+  return;
+  }
+}

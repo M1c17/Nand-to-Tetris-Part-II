@@ -1,0 +1,11 @@
+// User implementing Fraction
+Class Main {
+  function void main() {
+    var Fraction a, b, c;
+    let a = Fraction.new(2,3);
+    let b = Fraction.new(1.5);
+    let c = a.plus(b);
+    do c.print();
+    return ;
+  }
+}

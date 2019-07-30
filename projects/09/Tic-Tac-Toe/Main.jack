@@ -1,0 +1,23 @@
+class Main {
+  function void main(){
+    var BoardGame board;
+    var int location;
+    var int key;
+    var boolean x;
+    var boolean winner;
+
+    let board = BoardGame.new();
+
+    do Output.printString("First player: Make your move X");
+    do Output.println();
+
+    let x = false;
+    let winner = false;
+    while(~winner){
+      do board.choose_move(x);
+      let winner = board.winner();
+      let x = ~x;
+    }
+    return;
+  }
+}

@@ -1,0 +1,241 @@
+class BoardGame {
+  field Array squares;
+  static Array locationX;  //
+  static Array locationY;  //
+
+  constructor BoardGame new(){
+    //Initialize a new game Board
+    let locationX = Array.new(9);
+    let locationY = Array.new(9);
+
+    let locationX[0] = 192;
+    let locationX[1] = 256;
+    let locationX[2] = 320;
+    let locationX[3] = 192;
+    let locationX[4] = 256;
+    let locationX[5] = 320;
+    let locationX[6] = 192;
+    let locationX[7] = 256;
+    let locationX[8] = 320;
+
+    let locationY[0] = 64;
+    let locationY[1] = 64;
+    let locationY[2] = 64;
+    let locationY[3] = 128;
+    let locationY[4] = 128;
+    let locationY[5] = 128;
+    let locationY[6] = 192;
+    let locationY[7] = 192;
+    let locationY[8] = 192;
+
+    let squares = Array.new(9);
+
+    do draw_Board();
+    return this;
+
+    }
+
+    /** Draw the lines that form the BoardGame, which is made up of 3 x 3 grids. */
+    method void draw_Board(){
+      // draw left vertical line
+      do Screen.drawLine(224, 32, 224, 224);
+      // draw right vertical line
+      do Screen.drawLine(288, 32, 288, 224);
+      // draw top horizontal line
+      do Screen.drawLine(160, 96, 352, 96);
+      // draw bottom horizontal line
+      do Screen.drawLine(160, 160, 352, 160);
+      return;
+    }
+
+    /** Draw an X at x, y coordinates. */
+    method void draw_X(int x, int y){
+      var int left, right, top, bottom;
+
+      let left = x - 16;
+      let right = x + 16;
+      let top = y + 16;
+      let bottom = y - 16;
+
+      do Screen.drawLine(left, top, right, bottom);
+      do Screen.drawLine(right, top, left, bottom);
+
+      return;
+    }
+
+    /** Draw an O at x, y coordinates. */
+    method void draw_O(int x, int y){
+    // draw a circle inside another to make the effect O.
+      do Screen.drawCircle(x, y, 19);
+      do Screen.setColor(false);
+      do Screen.drawCircle(x, y, 18);
+      do Screen.setColor(true);
+      return;
+    }
+
+    /** Draw a Rectangle where the player want to put the X or O. */
+    method void draw_selector(int location){
+      var int left, right, top, bottom;
+      var int x, y;
+      let location = select_location(location);
+      let x = locationX[location];
+      let y = locationY[location];
+
+      let left = x - 20;
+      let top = y + 20;
+      let right = x + 20;
+      let bottom = y - 20;
+
+      do Screen.drawLine(left, top, left, bottom);
+      do Screen.drawLine(left, top, right, top);
+      do Screen.drawLine(right, top, right, bottom);
+      do Screen.drawLine(right, bottom, left, bottom);
+      return;
+    }
+
+    /** Redraw the selector by painting white to move the location of the selector. */
+    method void erase_selector(int location){
+      let location = select_location(location);
+      do Screen.setColor(false);
+      do draw_selector(location);
+      do Screen.setColor(true);
+      return;
+    }
+
+    /** delimit the bounds of the location.
+    to make sure that the player just can play with 9 of the grids in the board. */
+    method int select_location(int location){
+      if ((location > -1) & (location < 9)){
+        return location;
+      }
+      if (location < 0){
+        return 0;
+      }
+      if (location > 8){
+        return 8;
+      }
+      return 4;
+    }
+
+    method void Draw_move(int location, boolean x){
+      var int xcenter, ycenter;
+      let location = select_location(location);
+      let xcenter = locationX[location];
+      let ycenter = locationY[location];
+
+      if(x){
+        do draw_O(xcenter, ycenter);
+      }else{
+        do draw_X(xcenter, ycenter);
+    }
+    return;
+    }
+
+    /** if (x = true) place X, otherwise place O at given location. */
+    method void make_move(int location, boolean x){
+
+      if(x){
+        let squares[location] = 1;
+      }else{
+        let squares[location] = -1;
+      }
+      do Draw_move(location, x);
+      return;
+    }
+
+    /** Represent X = -1 and O = 1. */
+    method string id_to_String(int id){
+      if(id = -1){
+        return "X";
+      }else{
+        return "O";
+      }
+    }
+
+    /** Choose a location where the player want to place the X if(x = true)
+    otherwise O (x = false). */
+    method int choose_move(boolean x){
+      var int selection;
+      var int key;
+      let selection = 4;
+      do draw_selector(selection);
+
+      while(true){
+        let key = Keyboard.keyPressed();
+        // Right arrow
+        if(key = 132){
+          do erase_selector(selection);
+          let selection = select_location(selection + 1);
+          do draw_selector(selection);
+        }
+        // Left arrow;
+        if(key = 130){
+          do erase_selector(selection);
+          let selection = select_location(selection - 1);
+          do draw_selector(selection);
+        }
+        // Up arrow
+        if(key = 131){
+          do erase_selector(selection);
+          let selection = select_location(selection - 3);
+          do draw_selector(selection);
+        }
+        // Down arrow
+        if(key = 133){
+         do erase_selector(selection);
+         let selection = select_location(selection + 3);
+         do draw_selector(selection);
+        }
+        // Return key
+        if(key = 128){
+          do erase_selector(selection);
+          if(valid_move(selection)){
+            do make_move(selection, x);
+            return selection;
+          }else{
+            do draw_selector(selection);
+          }
+        }
+      }
+      return 4;
+    }
+
+    /** Check if the move is not already marked in the board. */
+    method boolean valid_move(int location){
+      if (~(squares[location] = -1) & ~(squares[location] = 1)){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+    /** Checks the Board to see if there is a winner. */
+    method boolean winner(){
+      if((three_win(squares[0], squares[1], squares[2])) |
+         (three_win(squares[3], squares[4], squares[5])) |
+         (three_win(squares[6], squares[7], squares[8])) |
+         (three_win(squares[0], squares[3], squares[6])) |
+         (three_win(squares[1], squares[4], squares[7])) |
+         (three_win(squares[2], squares[5], squares[8])) |
+         (three_win(squares[0], squares[4], squares[8])) |
+         (three_win(squares[2], squares[4], squares[6]))){
+         return true;
+       }
+         return false;
+     }
+
+     /** Checks whether three lined-up locations are equal to each other. Declare a winner.
+         if there are 0 = unplayed.*/
+      method boolean three_win(int x, int y, int z){
+        if((x = 0) | (y = 0) | (z = 0)){
+          return false;
+        }
+        if((x = y) & (y = z)){
+          do Output.printString("Congratulation!!!");
+          do Output.printString(id_to_String(x));
+          do Output.printString(" You are a winner!");
+          return true;
+      }
+        return false;
+    }
+  }

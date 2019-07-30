@@ -1,0 +1,23 @@
+// Fraction API
+// 2/3 + 1/5
+// (2/7 * 3/4) + 1/2
+// 8/9 / (5/6 - 2/19)
+
+Class Fraction {
+  /** Constructs a (reduced) fraction from the given numerator and denominator
+  constructor Fraction new(int x, int y)
+
+  /** Accessors */
+  method int getNumerator()
+  method int getDenominator()
+
+  /**Returns the sum of this fraction and the other one */
+  method Fraction plus(Fraction other)
+
+  /**Disposes this fraction */
+  // get rid to the memory resources that were allocated 
+  method void dispose()
+
+  /**Prints this fraction in the format x/y.*/
+  method void print()
+}

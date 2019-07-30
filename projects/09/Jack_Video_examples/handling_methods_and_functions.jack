@@ -1,0 +1,16 @@
+class Foo {
+
+method void f() {
+  var Bar b;    // declares a local variable of class type Library
+  var int i;    // declares a local variable of primitive type integer
+  ...
+  do g()        // calls method g of the current class on this object
+  do Foo().p(3) // calls function p of the current class
+  do Bar.h()    // calls function h of class Bar
+  let b = Bar.r(); // calls function or constructor r of class Bar
+  do b.q()        // calls method q of class Bar on the b object
+  let i = w(b.s()), Foo.t())   // calls method w on this object. The argument are
+                               // the results of calling method s on object b,
+                               // and function or constructor t of class Foo
+}
+}

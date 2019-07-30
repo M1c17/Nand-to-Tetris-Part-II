@@ -1,0 +1,1211 @@
+<keyword> class </keyword>
+<class>
+<identifier> Square </identifier>
+<symbol> { </symbol>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<identifier> x </identifier>
+<symbol> , </symbol>
+<identifier> y </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<identifier> size </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<Subroutine_Dec>
+<keyword> constructor </keyword>
+<identifier> Square </identifier>
+<identifier> new </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+<keyword> int </keyword>
+<identifier> Ax </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<identifier> Ay </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<identifier> Asize </identifier>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Ax </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Ay </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> size </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Asize </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expression_List>
+</expression_List>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</do_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<expression>
+<term>
+<keyword> this </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> dispose </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<identifier> deAlloc </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> this </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> erase </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> incSize </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<if_Statement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> < </symbol>
+<term>
+<integer_constant> 254 </integer_constant>
+</term>
+<symbol> ) </symbol>
+<symbol> & </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> < </symbol>
+<term>
+<integer_constant> 510 </integer_constant>
+</term>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+</expression>
+</term>
+</expression>
+</term>
+</expression>
+</term>
+</expression>
+</term>
+</expression>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> erase </identifier>
+<symbol> ( </symbol>
+<expression_List>
+</expression_List>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</do_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> size </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expression_List>
+</expression_List>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</do_Statement>
+</statements>
+<symbol> } </symbol>
+</if_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> decSize </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<if_Statement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> > </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> erase </identifier>
+<symbol> ( </symbol>
+<expression_List>
+</expression_List>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</do_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> size </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> size </identifier>
+<symbol> - </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expression_List>
+</expression_List>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</do_Statement>
+</statements>
+<symbol> } </symbol>
+</if_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> moveUp </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<if_Statement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> > </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> - </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+</expression>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+<symbol> - </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+</statements>
+<symbol> } </symbol>
+</if_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> moveDown </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<if_Statement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> < </symbol>
+<term>
+<integer_constant> 254 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+</term>
+</expression>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> - </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+</expression>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+</statements>
+<symbol> } </symbol>
+</if_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> moveLeft </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<if_Statement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> > </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> - </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+</expression>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+<symbol> - </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+</statements>
+<symbol> } </symbol>
+</if_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<Subroutine_Dec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> moveRight </identifier>
+<symbol> ( </symbol>
+<Parameter_List>
+</Parameter_List>
+<symbol> ) </symbol>
+<Subroutine_body>
+<symbol> { </symbol>
+<statements>
+<if_Statement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> < </symbol>
+<term>
+<integer_constant> 510 </integer_constant>
+</term>
+<symbol> ) </symbol>
+</expression>
+</term>
+</expression>
+<symbol> { </symbol>
+<statements>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<let_Statement>
+<keyword> let </keyword>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integer_constant> 2 </integer_constant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</let_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+<do_Statement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expression_List>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+<symbol> - </symbol>
+<term>
+<integer_constant> 1 </integer_constant>
+</term>
+</expression>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> ) </symbol>
+</expression>
+</expression_List>
+<symbol> ; </symbol>
+</do_Statement>
+</statements>
+<symbol> } </symbol>
+</if_Statement>
+<return_Statement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</return_Statement>
+</statements>
+<symbol> } </symbol>
+</Subroutine_body>
+</Subroutine_Dec>
+<symbol> } </symbol>
+</class>

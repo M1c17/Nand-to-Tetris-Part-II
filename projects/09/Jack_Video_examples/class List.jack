@@ -1,0 +1,34 @@
+/** Represents a linked list of integers */
+class List {
+  field int data;     //a list consist of a data field,
+  field list next;    //followed by a list.
+
+  /*Creates a List */
+  constructor List new(int car, List cdr) {
+    let data = car;
+    let next = cdr;
+    return this;
+  }
+  /** Prints this list */
+  method void print() {
+    var List current;     //creates a List variable and
+    let current = this;   //initializes it to the first item of this list
+    while (~(current == null)) {
+      do Output.printInt(current.getData());
+      do Output.printChar(32);    //prints a space
+      do current = current.getNext();
+    }
+    return;
+  }
+
+  /** Disposes this list */
+  //by recursively disposing its tail
+  method void dispose() {
+    if(~(next == null)) {
+      do next.dispose();
+    }
+    //Uses an OS routine to recycle this List
+    do Memory.deAlloc(this);
+    return;
+  }
+}

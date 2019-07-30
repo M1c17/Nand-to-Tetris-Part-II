@@ -1,0 +1,21 @@
+// Builds, prints and disposes a List
+
+class Main {
+  function void main() {
+    //Creates and manipulates the list (2,(3,(5,null))),
+    //commonly referred to as (2,3,5)
+    var List v;
+    let v = List.new(5, null);
+    let v = List.new(3, v));
+    let v = List.new(2,v)));
+    do.v.print();
+    do v.dispose();     //disposes the list
+    return;
+  }
+}
+
+
+//other way to create a list
+var List v;
+let v = List.new(5,null);
+let v = List.new(2,List.new(3,v));
